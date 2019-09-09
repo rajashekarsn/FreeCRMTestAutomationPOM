@@ -14,7 +14,7 @@ public class LoginPage extends TestBase {
     @FindBy(name = "password")
     WebElement password;
 
-    @FindBy(xpath = "//div[@id='ui']/div//form/div/div[.='Login']")
+    @FindBy(xpath = "//div[contains(text(),'Login')]")
     WebElement loginBtn;
 
     //Initializing the page objects
@@ -23,10 +23,16 @@ public class LoginPage extends TestBase {
     }
 
     /*****************Actions **************************/
-    //Validate title
+    //Validate login
     public HomePage validateLogin(String un, String pwd){
         username.sendKeys(un);
         password.sendKeys(pwd);
+        loginBtn.click();
+
+//        //loginBtn.click();
+//        JavascriptExecutor js = (JavascriptExecutor)driver;
+//        js.executeScript("arguments[0].click();", loginBtn);
+
         return new HomePage();
     }
 

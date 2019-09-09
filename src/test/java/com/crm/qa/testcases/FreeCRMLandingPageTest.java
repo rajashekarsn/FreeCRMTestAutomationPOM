@@ -25,14 +25,21 @@ public class FreeCRMLandingPageTest extends TestBase {
     @Test(priority = 1)
     public void landingPageTitleTest(){
         String title = landingPage.validatePageTitle();
-        Assert.assertEquals(title,"#1 Free CRM software for any business - FreeCRM.com");
+        Assert.assertEquals(title,"Free CRM #1 cloud software for any business large or small");
     }
 
+//    @Test(priority = 2)
+//    public void crmLogoTest(){
+//        boolean flag = landingPage.validateCRMLogo();
+//        Assert.assertTrue(flag);
+//    }
+
     @Test(priority = 2)
-    public void crmLogoTest(){
-        boolean flag = landingPage.validateCRMLogo();
-        Assert.assertTrue(flag);
+    public void pageHeaderTest(){
+        String header = landingPage.validateHeaderText();
+        Assert.assertEquals(header,"Free CRM Software in the Cloud");
     }
+
 
     @Test(priority = 3)
     public void loginLinkTest(){

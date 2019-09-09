@@ -12,7 +12,10 @@ public class FreeCRMLandingPage extends TestBase{
     @FindBy(xpath = "//img[@class = 'img-responsive']")
     WebElement crmLogo;
 
-    @FindBy(linkText = "Login")
+    @FindBy(xpath = "//*[contains(text(),'Free CRM Software in the Cloud')]")
+    WebElement pageHeader;
+
+    @FindBy(xpath = "//*[contains(@href,'ui.freecrm.com')]")
     WebElement loginLink;
     // linkText = "Login"
     // xpath = "//*[@id=\"navbar-collapse\"]/ul/li[1]/a"
@@ -31,16 +34,21 @@ public class FreeCRMLandingPage extends TestBase{
         return driver.getTitle();
     }
 
-    //Validate crm logo
-    public boolean validateCRMLogo(){
-        return crmLogo.isDisplayed();
+//    //Validate crm logo
+//    public boolean validateCRMLogo(){
+//        return crmLogo.isDisplayed();
+//    }
+
+    //Validate header
+    public String validateHeaderText(){
+        return pageHeader.getText();
     }
+
 
     // Validate login link , should take to login page
     public LoginPage validateLoginLink(){
         Actions actions = new Actions(driver);
         actions.moveToElement(loginLink).click().perform();
-//        loginLink.click();
         return new LoginPage();
     }
 

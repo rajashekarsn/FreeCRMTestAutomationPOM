@@ -2,7 +2,6 @@ package com.crm.qa.utilities;
 
 import com.crm.qa.base.TestBase;
 import org.apache.commons.io.FileUtils;
-import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
@@ -19,7 +18,7 @@ public class TestUtilities extends TestBase {
     public static long PAGE_LOAD_TIMEOUT = 30;
     public static long IMPLICIT_WAIT = 30;
 
-    public static String TEST_DATA_SHEET_PATH = "/IdeaProjects/FreeCRMTest/src/main/java/com/crm/qa/testdata/FreeCRMTestData.xlsx";
+    public static String TEST_DATA_SHEET_PATH = "/home/shanmukh/IdeaProjects/FreeCRMTest/src/main/java/com/crm/qa/testdata/FreeCRMTestData.xlsx";
     static Workbook book;
     static Sheet sheet;
     static JavascriptExecutor js;
@@ -41,7 +40,7 @@ public class TestUtilities extends TestBase {
             book = WorkbookFactory.create(file);
         } catch (IOException e) {
             e.printStackTrace();
-        } /** catch (InvalidFormatException e) {
+        } /**catch (InvalidFormatException e) {
 
         } */
 
